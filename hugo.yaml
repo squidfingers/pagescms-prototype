@@ -1,1 +1,5 @@
-title: Pages CMS Prototype (Edited)
+---
+languageCode: "en-us"
+title: "Pages CMS Prototype"
+disableKinds: ["RSS","taxonomy","term"]
+...
