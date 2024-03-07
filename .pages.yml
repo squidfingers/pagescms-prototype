@@ -1,0 +1,18 @@
+media: media
+content:
+  - name: config
+    label: Hugo config
+    path: hugo.yaml
+    type: file
+    fields:
+      - name: title
+        label: Website title
+        type: string
+  - name: home
+    label: Home page
+    path: content/_index.md
+    type: file
+    fields:
+      - name: title
+        label: Page title
+        type: string
