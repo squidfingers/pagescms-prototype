@@ -1,5 +1,3 @@
 ---
-title: Home
+title: Home Edited
 ---
-
-This is the home page.
