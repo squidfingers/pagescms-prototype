@@ -18,5 +18,4 @@ content:
         type: string
       - name: body
         label: Content
-        options:
-          format: markdown
+        type: rich-text
