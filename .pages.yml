@@ -53,7 +53,7 @@ content:
     label: News articles
     type: collection
     path: content/news
-    filename: '{year}-{month}-{day}-{primary}-{primary}.md'
+    filename: '{year}-{month}-{day}-{primary}.md'
     view:
       fields: [ title, date, draft ]
       primary: title
