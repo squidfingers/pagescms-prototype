@@ -16,3 +16,7 @@ content:
       - name: title
         label: Page title
         type: string
+      - name: body
+        label: Content
+        options:
+          format: markdown
