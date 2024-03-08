@@ -10,10 +10,7 @@ sections:
   - title: Section 4
     content: |-
       This is [section four](https://example.com).
-
-      *   One
-          
-      *   Two
-          
-      *   Three
+      * One
+      * Two 
+      * Three
 ---
