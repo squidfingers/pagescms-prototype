@@ -64,6 +64,7 @@ content:
       - name: date
         label: Date
         type: date
+        time: true
       - name: draft
         label: Draft
         type: boolean
