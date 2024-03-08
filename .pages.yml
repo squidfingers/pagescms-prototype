@@ -22,6 +22,7 @@ content:
       - name: sections
         label: Sections
         type: object
+        list: true
         fields:
         - name: title
           label: Title
