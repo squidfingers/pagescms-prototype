@@ -1,6 +1,11 @@
 {{ define "main" }}
-  <h1>
+  <h2>
     {{ .Title }}
-  </h1>
-  {{ .Content }}
+  </h2>
+  {{ range .Params.sections }}
+    <section>
+      <h3>{{ .title }}</h3>
+      {{ .content }}
+    </section>
+  {{ end }}
 {{ end }}

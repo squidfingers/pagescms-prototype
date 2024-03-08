@@ -2,4 +2,14 @@
 languageCode: "en-us"
 title: "Pages CMS Prototype"
 disableKinds: ["RSS","taxonomy","term"]
+
+menu:
+  main:
+  - name: Home
+    pageRef: /
+    weight: 1
+  - name: About
+    pageRef: /about/
+    weight: 2
+
 ...
