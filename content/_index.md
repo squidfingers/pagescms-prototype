@@ -7,10 +7,4 @@ sections:
     content: This is section two.
   - title: Section 3
     content: This is section three.
-  - title: Section 4
-    content: |-
-      This is [section four](https://example.com).
-      * One
-      * Two 
-      * Three
 ---
