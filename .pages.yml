@@ -41,3 +41,31 @@ content:
       - name: body
         label: Content
         type: rich-text
+  - name: news
+    label: News
+    path: content/news/_index.md
+    type: file
+    fields:
+      - name: title
+        label: Page title
+        type: string
+  - name: articles
+    label: News articles
+    type: collection
+    path: content/news
+    view:
+      fields: [ title, date, draft ]
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: date
+        label: Date
+        type: date
+      - name: draft
+        label: Draft
+        type: boolean
+        default: true
+      - name: body
+        label: Content
+        type: rich-text
