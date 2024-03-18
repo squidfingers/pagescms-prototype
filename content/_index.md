@@ -2,7 +2,10 @@
 title: Home
 sections:
   - title: Section 1
-    content: This is section one.
+    content: |-
+      This is section one.
+
+      ![](uploads/opossum.jpg)
   - title: Section 2
     content: This is section two.
   - title: Section 3
