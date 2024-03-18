@@ -10,9 +10,11 @@ content:
       - name: address
         label: Address
         type: string
+        required: true
       - name: phone
         label: Phone
         type: string
+        required: true
   - name: home
     label: Home
     path: content/_index.md
@@ -29,6 +31,10 @@ content:
           - name: title
             label: Title
             type: string
+            required: true
+          - name: image
+            label: Image
+            type: image
           - name: content
             label: Content
             type: rich-text
@@ -40,6 +46,7 @@ content:
       - name: title
         label: Page title
         type: string
+        required: true
       - name: body
         label: Content
         type: rich-text
@@ -51,6 +58,7 @@ content:
       - name: title
         label: Page title
         type: string
+        required: true
   - name: articles
     label: News articles
     type: collection
@@ -63,9 +71,11 @@ content:
       - name: title
         label: Title
         type: string
+        required: true
       - name: date
         label: Date
         type: date
+        required: true
         options:
           time: true
       - name: draft

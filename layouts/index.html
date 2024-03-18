@@ -5,7 +5,10 @@
   {{ range .Params.sections }}
     <section>
       <h3>{{ .title }}</h3>
-      {{ .content }}
+      {{ with .image }}
+        <p><img src="{{ . }}" alt=""></p>
+      {{ end }}
+      {{ .content | markdownify }}
     </section>
   {{ end }}
 {{ end }}
