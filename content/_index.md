@@ -2,7 +2,7 @@
 title: Home
 sections:
   - title: Section 1
-    image: uploads/placeholder.svg
+    image: uploads/opossum.jpg
     content: This is section one.
   - title: Section 2
     content: This is section two.
