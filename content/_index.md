@@ -4,6 +4,9 @@ sections:
   - title: Section 1
     image: uploads/opossum.jpg
     content: This is section one.
+    action:
+      label: Learn more
+      url: https://foo.bar
   - title: Section 2
     content: This is section two.
   - title: Section 3

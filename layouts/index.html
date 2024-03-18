@@ -9,6 +9,9 @@
         <p><img src="{{ . }}" alt=""></p>
       {{ end }}
       {{ .content | markdownify }}
+      {{ with .action }}
+        <p><a href="{{ .url }}">{{ .label }}</a></p>
+      {{ end }}
     </section>
   {{ end }}
 {{ end }}

@@ -38,6 +38,16 @@ content:
           - name: content
             label: Content
             type: rich-text
+          - name: action
+            label: Action
+            type: object
+            fields:
+              - name: label
+                name: Label
+                type: string
+              - name: url
+                name: URL
+                type: string
   - name: about
     label: About
     path: content/about/_index.md
