@@ -49,7 +49,7 @@ content:
                 label: URL
                 type: string
                 pattern:
-                  regex: '^(http|https):\/\/'
+                  regex: '^https?:\/\/'
                   message: 'This must be a valid URL (e.g. http://example.com).'
   - name: about
     label: About
