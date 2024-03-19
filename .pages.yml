@@ -48,7 +48,7 @@ content:
               - name: url
                 label: URL
                 type: string
-                pattern: { message: 'This must be a valid URL (e.g. http://example.com).', regex: '^(http(s):\/\/)' }
+                pattern: { message: 'This must be a valid URL (e.g. http://example.com).', regex: '^(http|https)://' }
   - name: about
     label: About
     path: content/about/_index.md
