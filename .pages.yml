@@ -43,10 +43,10 @@ content:
             type: object
             fields:
               - name: label
-                name: Label
+                label: Label
                 type: string
               - name: url
-                name: URL
+                label: URL
                 type: string
   - name: about
     label: About
