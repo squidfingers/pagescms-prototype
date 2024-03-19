@@ -1,14 +1,14 @@
 ---
 title: Home
 sections:
-  - title: Section 1
+  - title: Section One
     image: uploads/opossum.jpg
     content: This is section one.
     action:
       label: Learn more
       url: https://foo.bar
-  - title: Section 2
+  - title: Section Two
     content: This is section two.
-  - title: Section 3
+  - title: Section Three
     content: This is section three.
 ---
