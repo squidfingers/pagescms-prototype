@@ -63,6 +63,11 @@ content:
       - name: body
         label: Content
         type: rich-text
+      - name: aliases
+        label: Aliases
+        hidden: true
+        type: string
+        list: true
   - name: news
     label: News
     path: content/news/_index.md
