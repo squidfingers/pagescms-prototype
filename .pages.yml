@@ -48,7 +48,9 @@ content:
               - name: url
                 label: URL
                 type: string
-                pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$
+                pattern: 
+                  regex: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$
+                  message: Must be a valid URL
   - name: about
     label: About
     path: content/about/_index.md
