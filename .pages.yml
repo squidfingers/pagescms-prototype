@@ -104,4 +104,4 @@ content:
     label: Styles
     path: assets/css/styles.css
     type: file
-    format: raw
+    format: code
