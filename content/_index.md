@@ -9,9 +9,6 @@ sections:
       url: https://foo.bar
   - title: Section Two
     content: This is section two.
-    action:
-      label: foo
-      url: foo.com
   - title: Section Three
     content: This is section three.
 ---
