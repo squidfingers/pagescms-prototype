@@ -81,8 +81,7 @@ content:
     label: News articles
     type: collection
     path: content/news
-    exclude:
-      - _index.md
+    exclude: [_index.md]
     filename: "{year}-{month}-{day}-{primary}.md"
     view:
       fields: [title, date, draft]
