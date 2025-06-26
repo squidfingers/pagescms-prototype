@@ -1,14 +1,20 @@
 ---
 title: Home
 sections:
-  - title: Section One
-    image: uploads/opossum.jpg
+  - type: hero
+    title: Headline
+    image: media/opossum.jpg
+  - type: card
+    title: Section One
+    image: media/opossum.jpg
     content: This is section one.
-    action:
+    button:
       label: Learn more
-      url: https://foo.bar
-  - title: Section Two
+      link: https://foo.bar
+  - type: card
+    title: Section Two
     content: This is section two.
-  - title: Section Three
+  - type: card
+    title: Section Three
     content: This is section three.
 ---

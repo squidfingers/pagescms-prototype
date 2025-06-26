@@ -1,7 +1,9 @@
 media:
-  input: static/uploads
-  output: uploads
+  input: static/media
+  output: /media
+
 content:
+  # Config
   - name: config
     label: Config
     path: data/config.yaml
@@ -15,49 +17,41 @@ content:
         label: Phone
         type: string
         required: true
+  # Home
   - name: home
     label: Home
     path: content/_index.md
     type: file
     fields:
       - name: title
-        label: Page title
+        label: Title
         type: string
       - name: sections
         label: Sections
-        type: object
+        type: block
         list: true
-        fields:
-          - name: title
-            label: Title
-            type: string
-            required: true
-          - name: image
-            label: Image
-            type: image
-          - name: content
-            label: Content
-            type: rich-text
-          - name: action
-            label: Action
-            type: object
+        blockKey: type
+        blocks:
+          - name: hero
+            label: Add Hero
+            component: hero
+          - name: card
+            label: Add Card
+            component: card
+          - name: text
+            label: Add Text Block
             fields:
-              - name: label
-                label: Label
-                type: string
-              - name: url
-                label: URL
-                type: string
-                pattern:
-                  regex: ^(|(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?)$ # Must be a valid email or empty
-                  message: Must be a valid URL
+              - name: content
+                label: Content
+                type: rich-text
+  # About
   - name: about
     label: About
     path: content/about/_index.md
     type: file
     fields:
       - name: title
-        label: Page title
+        label: Title
         type: string
         required: true
       - name: body
@@ -65,27 +59,34 @@ content:
         type: rich-text
       - name: aliases
         label: Aliases
-        hidden: true
         type: string
         list: true
+        hidden: true
+  # News
   - name: news
     label: News
     path: content/news/_index.md
     type: file
     fields:
       - name: title
-        label: Page title
+        label: Title
         type: string
         required: true
+  # News articles
   - name: articles
     label: News articles
     type: collection
     path: content/news
-    exclude: [_index.md]
-    filename: "{year}-{month}-{day}-{primary}.md"
+    exclude:
+      - _index.md
+    filename: '{fields.date}-{primary}.md'
     view:
       fields: [title, date, draft]
       primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
     fields:
       - name: title
         label: Title
@@ -109,3 +110,48 @@ content:
     path: assets/css/styles.css
     type: file
     format: code
+
+components:
+  # Button
+  button:
+    label: Button
+    type: object
+    fields:
+      - name: label
+        label: Label
+        type: string
+      - name: link
+        label: Link
+        type: string
+  # Hero
+  hero:
+    label: Hero
+    type: object
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: cover
+        label: Image
+        type: image
+        options:
+          multiple: false
+  # Card
+  card:
+    label: Card
+    type: object
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: image
+        label: Image
+        type: image
+        options:
+          multiple: false
+      - name: content
+        label: Content
+        type: rich-text
+      - name: button
+        label: Button
+        component: Button

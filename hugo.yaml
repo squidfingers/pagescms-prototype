@@ -1,6 +1,5 @@
-languageCode: "en-us"
-title: "Pages CMS Prototype"
-disableKinds: ["RSS","taxonomy","term"]
+title: Pages CMS Prototype
+disableKinds: [RSS, taxonomy, term]
 
 menu:
   main:
@@ -13,4 +12,3 @@ menu:
   - name: News
     pageRef: /news/
     weight: 3
-

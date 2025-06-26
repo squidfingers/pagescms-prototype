@@ -8,7 +8,6 @@
     {{ end }}
   </head>
   <body>
-
     <nav>
       <ul>
       {{ range site.Menus.main }}
@@ -18,10 +17,8 @@
       {{ end }}
       </ul>
     </nav>
-
     {{ block "main" . }}
     {{ end }}
-
     <footer>
       <ul>
         <li>
@@ -32,6 +29,5 @@
         </li>
       </ul>
     </footer>
-
   </body>
 </html>
