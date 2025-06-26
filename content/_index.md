@@ -6,7 +6,7 @@ sections:
     cover: /media/image.jpg
   - type: card
     title: Section One
-    image: media/opossum.jpg
+    image: /media/opossum.jpg
     content: This is section one.
     button:
       label: Learn more
