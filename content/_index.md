@@ -17,5 +17,5 @@ sections:
     title: Section Three
     content: This is section three.
   - type: text
-    content: This is a text block.
+    content: "### This is a text block."
 ---
