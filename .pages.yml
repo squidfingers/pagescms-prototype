@@ -106,6 +106,7 @@ content:
       - name: body
         label: Content
         type: rich-text
+  # Styles
   - name: user_styles
     label: Styles
     path: assets/css/styles.css
