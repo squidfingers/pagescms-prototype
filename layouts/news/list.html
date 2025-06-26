@@ -4,7 +4,9 @@
   </h2>
   {{ range sort .RegularPages "Date" "desc" }}
     <section>
-      <h3>{{ .Title }}</h3>
+      <h3>
+        {{ .Title }}
+      </h3>
       {{ .Content }}
     </section>
   {{ end }}

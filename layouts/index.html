@@ -18,7 +18,9 @@
 {{ define "hero" }}
   <section class="hero" {{ with .image }}style="background-image:url({{ . }})"{{ end }}>
     {{ with .title }}
-      <h3>{{ . }}</h3>
+      <h3>
+        {{ . }}
+      </h3>
     {{ end }}
   </section>
 {{ end }}
@@ -26,16 +28,22 @@
 {{ define "card" }}
   <section class="card">
     {{ with .title }}
-      <h3>{{ . }}</h3>
+      <h3>
+        {{ . }}
+      </h3>
     {{ end }}
     {{ with .image }}
-      <p><img src="{{ . }}" alt=""></p>
+      <p>
+        <img src="{{ . }}" alt="">
+      </p>
     {{ end }}
     {{ with .content }}
-      {{ . | markdownify }}
+      {{ . | $.Page.RenderString (dict "display" "block") }}
     {{ end }}
     {{ with .button }}
-      <p><a href="{{ .link }}">{{ .label }}</a></p>
+      <p>
+        <a href="{{ .link }}">{{ .label }}</a>
+      </p>
     {{ end }}
   </section>
 {{ end }}
@@ -43,7 +51,7 @@
 {{ define "text" }}
   <section class="text">
     {{ with .content }}
-      {{ . | markdownify }}
+      {{ . | $.Page.RenderString (dict "display" "block") }}
     {{ end }}
   </section>
 {{ end }}
