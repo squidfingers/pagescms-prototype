@@ -33,13 +33,13 @@ content:
         blockKey: type
         blocks:
           - name: hero
-            label: Add Hero
+            label: Hero
             component: hero
           - name: card
-            label: Add Card
+            label: Card
             component: card
           - name: text
-            label: Add Text Block
+            label: Text
             fields:
               - name: content
                 label: Content
