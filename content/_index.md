@@ -3,6 +3,7 @@ title: Home
 sections:
   - type: hero
     title: Headline
+    cover: /media/image.jpg
   - type: card
     title: Section One
     image: media/opossum.jpg
