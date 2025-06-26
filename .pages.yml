@@ -98,6 +98,7 @@ content:
         required: true
         options:
           time: true
+          format: yyyy-MM-dd'T'HH:mm:00
       - name: draft
         label: Draft
         type: boolean
