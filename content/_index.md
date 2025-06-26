@@ -3,7 +3,6 @@ title: Home
 sections:
   - type: hero
     title: Headline
-    image: media/opossum.jpg
   - type: card
     title: Section One
     image: media/opossum.jpg
@@ -17,4 +16,6 @@ sections:
   - type: card
     title: Section Three
     content: This is section three.
+  - type: text
+    content: This is a text block.
 ---
