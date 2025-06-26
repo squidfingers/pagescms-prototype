@@ -38,7 +38,7 @@
       </p>
     {{ end }}
     {{ with .content }}
-      {{ . | $.Page.RenderString (dict "display" "block") }}
+      {{ . | markdownify }}
     {{ end }}
     {{ with .button }}
       <p>
@@ -51,7 +51,7 @@
 {{ define "text" }}
   <section class="text">
     {{ with .content }}
-      {{ . | $.Page.RenderString (dict "display" "block") }}
+      {{ . | markdownify }}
     {{ end }}
   </section>
 {{ end }}
