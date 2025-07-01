@@ -26,24 +26,28 @@ content:
       - name: title
         label: Title
         type: string
-      - name: sections
-        label: Sections
-        type: block
-        list: true
-        blockKey: type
-        blocks:
-          - name: hero
-            label: Hero
-            component: hero
-          - name: card
-            label: Card
-            component: card
-          - name: text
-            label: Text
-            fields:
-              - name: content
-                label: Content
-                type: rich-text
+      - name: params
+        label: Params
+        type: object
+        fields:
+        - name: components
+          label: Components
+          type: block
+          list: true
+          blockKey: type
+          blocks:
+            - name: hero
+              label: Hero
+              component: hero
+            - name: card
+              label: Card
+              component: card
+            - name: text
+              label: Text
+              fields:
+                - name: content
+                  label: Content
+                  type: rich-text
   # About
   - name: about
     label: About
@@ -113,8 +117,8 @@ content:
           creatable: true
           multiple: true
           fetch:
+            # In a real-world use-case, this json file would be genereated at the root of the website and would contain all of the tags used the last time the site was built.
             url: https://raw.githubusercontent.com/squidfingers/pagescms-prototype/refs/heads/main/static/tags.json
-
   # Styles
   - name: user_styles
     label: Styles

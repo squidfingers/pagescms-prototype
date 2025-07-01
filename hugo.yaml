@@ -1,5 +1,5 @@
 title: Pages CMS Prototype
-disableKinds: [RSS, taxonomy, term]
+disableKinds: [RSS]
 
 menu:
   main:
@@ -12,3 +12,16 @@ menu:
   - name: News
     pageRef: /news/
     weight: 3
+
+taxonomies:
+  tag: tags
+
+outputformats:
+  Tags:
+    baseName: tags
+    mediaType: application/json
+
+outputs:
+  home:
+    - HTML
+    - Tags
