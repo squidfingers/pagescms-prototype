@@ -112,13 +112,15 @@ content:
         type: rich-text
       - name: tags
         label: Tags
-        type: select
-        options:
-          creatable: true
-          multiple: true
-          fetch:
+        type: string
+        list: true
+        #type: select
+        #options:
+        #  creatable: true
+        #  multiple: true
+        #  fetch:
             # In a real-world use-case, this json file would be genereated at the root of the website and would contain all of the tags used the last time the site was built.
-            url: https://raw.githubusercontent.com/squidfingers/pagescms-prototype/refs/heads/main/static/tags.json
+        #    url: https://raw.githubusercontent.com/squidfingers/pagescms-prototype/refs/heads/main/static/tags.json
   # Styles
   - name: user_styles
     label: Styles
