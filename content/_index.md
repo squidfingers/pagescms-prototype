@@ -20,4 +20,12 @@ params:
       content: This is section three.
     - type: text
       content: "### This is a text block."
+    - type: accordion
+      details:
+        - summary: Item one
+          content: This is content for item one.
+        - summary: Item two
+          content: This is content for item two.
+        - summary: Item three
+          content: This is content for item three.
 ---

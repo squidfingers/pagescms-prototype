@@ -36,12 +36,15 @@ content:
           list: true
           blockKey: type
           blocks:
-            - name: hero
-              label: Hero
-              component: hero
+            - name: accordion
+              label: Accordion
+              component: accordion
             - name: card
               label: Card
               component: card
+            - name: hero
+              label: Hero
+              component: hero
             - name: text
               label: Text
               fields:
@@ -172,3 +175,21 @@ components:
       - name: button
         label: Button
         component: button
+  # Accordion
+  accordion:
+    label: Accordion
+    type: object
+    fields:
+      - name: details
+        label: Details
+        type: object
+        list: true
+        fields:
+          - name: summary
+            label: Summary
+            type: string
+          - name: content
+            label: Content
+            type: rich-text
+            options:
+              rows: 3
