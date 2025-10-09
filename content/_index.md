@@ -18,14 +18,16 @@ params:
     - type: card
       title: Section Three
       content: This is section three.
-    - type: text
-      content: "### This is a text block."
     - type: accordion
       details:
         - summary: Item one
-          content: This is content for item one.
+          content: This is **content** for item one.
         - summary: Item two
           content: This is content for item two.
         - summary: Item three
           content: This is content for item three.
+        - summary: Item four
+          content: This is content for item four.
+    - type: text
+      content: "### This is a text block."
 ---
