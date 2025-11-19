@@ -30,4 +30,7 @@ params:
           content: This is content for item four.
     - type: text
       content: "### This is a text block."
+    - type: card
+      title: Another card
+      content: foo 123
 ---
