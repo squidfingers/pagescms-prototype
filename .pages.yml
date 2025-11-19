@@ -30,27 +30,8 @@ content:
         label: Params
         type: object
         fields:
-        - name: components
-          label: Components
-          type: block
-          list: true
-          blockKey: type
-          blocks:
-            - name: accordion
-              label: Accordion
-              component: accordion
-            - name: card
-              label: Card
-              component: card
-            - name: hero
-              label: Hero
-              component: hero
-            - name: text
-              label: Text
-              fields:
-                - name: content
-                  label: Content
-                  type: rich-text
+          - name: components
+            component: pageComponents
   # About
   - name: about
     label: About
@@ -86,7 +67,7 @@ content:
     path: content/news
     exclude:
       - _index.md
-    filename: '{fields.date}-{primary}.md'
+    filename: "{fields.date}-{primary}.md"
     view:
       fields: [title, date, draft]
       primary: title
@@ -122,7 +103,7 @@ content:
         #  creatable: true
         #  multiple: true
         #  fetch:
-            # In a real-world use-case, this json file would be genereated at the root of the website and would contain all of the tags used the last time the site was built.
+        # In a real-world use-case, this json file would be genereated at the root of the website and would contain all of the tags used the last time the site was built.
         #    url: https://raw.githubusercontent.com/squidfingers/pagescms-prototype/refs/heads/main/static/tags.json
   # Styles
   - name: user_styles
@@ -193,3 +174,22 @@ components:
             type: rich-text
             options:
               rows: 3
+  # All page components
+  pageComponents:
+    label: Page Components
+    type: block
+    list: true
+    blockKey: type
+    blocks:
+      - name: accordion
+        component: accordion
+      - name: card
+        component: card
+      - name: hero
+        component: hero
+      - name: text
+        label: Text
+        fields:
+          - name: content
+            label: Content
+            type: rich-text
