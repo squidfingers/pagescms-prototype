@@ -27,7 +27,7 @@ content:
         label: Title
         type: string
       - name: params
-        label: Params
+        label: Content
         type: object
         fields:
           - name: components
