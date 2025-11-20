@@ -142,8 +142,8 @@ components:
     label: Cards
     type: object
     fields:
-      - name: card
-        label: Card
+      - name: Cards
+        label: Cards
         type: object
         list: true
         fields:
