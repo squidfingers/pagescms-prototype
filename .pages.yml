@@ -166,6 +166,9 @@ components:
           - name: buttons
             label: Buttons
             list: true
+            collapsible:
+              collapsed: true
+              summary: "Button #{index}"
             component: button
   # Accordion
   accordion:
