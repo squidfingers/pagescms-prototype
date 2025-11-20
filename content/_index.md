@@ -11,11 +11,8 @@ params:
           image: /media/opossum.jpg
           content: This is section one.
           buttons:
-            - label: Learn more
-              link: https://foo.bar
-            - label: Another button
-              link: https://foo.bar
-              variant: secondary
+            - {}
+            - {}
         - title: Section Two
           content: This is section two.
         - title: Section Three
@@ -36,4 +33,9 @@ params:
       cards:
         - title: Another card
           content: foo 123
+          buttons:
+            - button:
+                label: foo
+                link: bar
+                variant: primary
 ---
