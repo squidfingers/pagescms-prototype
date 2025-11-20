@@ -167,9 +167,7 @@ components:
             label: Buttons
             type: object
             list: true
-            fields:
-              - name: button
-                component: button
+            component: button
   # Accordion
   accordion:
     label: Accordion

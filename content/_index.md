@@ -11,11 +11,9 @@ params:
           image: /media/opossum.jpg
           content: This is section one.
           buttons:
-            - button:
-              label: Learn more
+            - label: Learn more
               link: https://foo.bar
-            - button:
-              label: Another button
+            - label: Another button
               link: https://foo.bar
               variant: secondary
         - title: Section Two
