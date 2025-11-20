@@ -10,9 +10,12 @@ params:
         - title: Section One
           image: /media/opossum.jpg
           content: This is section one.
-          button:
-            label: Learn more
-            link: https://foo.bar
+          buttons:
+            - label: Learn more
+              link: https://foo.bar
+            - label: Another button
+              link: https://foo.bar
+              variant: secondary
         - title: Section Two
           content: This is section two.
         - title: Section Three

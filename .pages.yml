@@ -124,6 +124,11 @@ components:
       - name: link
         label: Link
         type: string
+      - name: variant
+        label: Variant
+        type: select
+        options:
+          values: [primary, secondary]
   # Hero
   hero:
     label: Hero
@@ -158,9 +163,12 @@ components:
           - name: content
             label: Content
             type: rich-text
-          - name: button
-            label: Button
-            component: button
+          - name: buttons
+            label: Buttons
+            type: object
+            list: true
+            fields:
+              component: button
   # Accordion
   accordion:
     label: Accordion

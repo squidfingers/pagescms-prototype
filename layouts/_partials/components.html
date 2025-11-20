@@ -28,24 +28,33 @@
   <section class="cards cards--len-{{ .cards | len }}">
     {{ range .cards }}
       <article class="card">
-        {{ with .title }}
-          <h3>
-            {{ . }}
-          </h3>
-        {{ end }}
         {{ with .image }}
-          <p>
+          <div class="card__media">
             <img src="{{ . }}" alt="">
-          </p>
+          </div>
         {{ end }}
-        {{ with .content }}
-          {{ . | markdownify }}
-        {{ end }}
-        {{ with .button }}
-          <p>
-            <a href="{{ .link }}">{{ .label }}</a>
-          </p>
-        {{ end }}
+        <div class="card__body">
+          {{ with .title }}
+            <h3 class="card__header">
+              {{ . }}
+            </h3>
+          {{ end }}
+          {{ with .content }}
+            <div class="card__content">
+              {{ . | markdownify }}
+            </div>
+          {{ end }}
+          {{ with .buttons }}
+            <div class="card__footer">
+              {{ range . }}
+                {{ $variant := default "primary" .variant }}
+                <a href="{{ .link }}" class="button button--{{ $variant }}">
+                  {{ .label }}
+                </a>
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
       </article>
     {{ end }}
   </section>
