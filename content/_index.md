@@ -5,19 +5,18 @@ params:
     - type: hero
       title: Headline
       cover: /media/image.jpg
-    - type: card
-      title: Section One
-      image: /media/opossum.jpg
-      content: This is section one.
-      button:
-        label: Learn more
-        link: https://foo.bar
-    - type: card
-      title: Section Two
-      content: This is section two.
-    - type: card
-      title: Section Three
-      content: This is section three.
+    - type: cards
+      cards:
+        - title: Section One
+          image: /media/opossum.jpg
+          content: This is section one.
+          button:
+            label: Learn more
+            link: https://foo.bar
+        - title: Section Two
+          content: This is section two.
+        - title: Section Three
+          content: This is section three.
     - type: accordion
       details:
         - summary: Item one
@@ -30,7 +29,8 @@ params:
           content: This is content for item four.
     - type: text
       content: "### This is a text block."
-    - type: card
-      title: Another card
-      content: foo 123
+    - type: cards
+      cards:
+        - title: Another card
+          content: foo 123
 ---

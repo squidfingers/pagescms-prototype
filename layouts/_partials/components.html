@@ -1,8 +1,8 @@
 {{ range .Params.components }}
   {{ if eq .type "accordion" }}
     {{ template "accordion-component" . }}
-  {{ else if eq .type "card" }}
-    {{ template "card-component" . }}
+  {{ else if eq .type "cards" }}
+    {{ template "cards-component" . }}
   {{ else if eq .type "hero" }}
     {{ template "hero-component" . }}
   {{ else if eq .type "text" }}
@@ -16,7 +16,7 @@
   <section class="accordion">
     {{ $name := substr (string math.Rand) 4 8 }}
     {{ range .details }}
-      <details name="accordion{{ $name }}">
+      <details name="accordion-{{ $name }}">
         <summary>{{ .summary | markdownify }}</summary>
         {{ .content | markdownify }}
       </details>
@@ -24,25 +24,29 @@
   </section>
 {{ end }}
 
-{{ define "card-component" }}
-  <section class="card">
-    {{ with .title }}
-      <h3>
-        {{ . }}
-      </h3>
-    {{ end }}
-    {{ with .image }}
-      <p>
-        <img src="{{ . }}" alt="">
-      </p>
-    {{ end }}
-    {{ with .content }}
-      {{ . | markdownify }}
-    {{ end }}
-    {{ with .button }}
-      <p>
-        <a href="{{ .link }}">{{ .label }}</a>
-      </p>
+{{ define "cards-component" }}
+  <section class="cards cards--len-{{ .cards | len }}">
+    {{ range .cards }}
+      <article class="card">
+        {{ with .title }}
+          <h3>
+            {{ . }}
+          </h3>
+        {{ end }}
+        {{ with .image }}
+          <p>
+            <img src="{{ . }}" alt="">
+          </p>
+        {{ end }}
+        {{ with .content }}
+          {{ . | markdownify }}
+        {{ end }}
+        {{ with .button }}
+          <p>
+            <a href="{{ .link }}">{{ .label }}</a>
+          </p>
+        {{ end }}
+      </article>
     {{ end }}
   </section>
 {{ end }}

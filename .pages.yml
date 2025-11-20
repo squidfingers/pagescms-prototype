@@ -31,7 +31,7 @@ content:
         type: object
         fields:
           - name: components
-            component: pageComponents
+            component: components
   # About
   - name: about
     label: About
@@ -137,25 +137,30 @@ components:
         type: image
         options:
           multiple: false
-  # Card
-  card:
-    label: Card
+  # Cards
+  cards:
+    label: Cards
     type: object
     fields:
-      - name: title
-        label: Title
-        type: string
-      - name: image
-        label: Image
-        type: image
-        options:
-          multiple: false
-      - name: content
-        label: Content
-        type: rich-text
-      - name: button
-        label: Button
-        component: button
+      - name: card
+        label: Card
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: image
+            label: Image
+            type: image
+            options:
+              multiple: false
+          - name: content
+            label: Content
+            type: rich-text
+          - name: button
+            label: Button
+            component: button
   # Accordion
   accordion:
     label: Accordion
@@ -174,8 +179,8 @@ components:
             type: rich-text
             options:
               rows: 3
-  # All page components
-  pageComponents:
+  # Page components
+  components:
     label: Page Components
     type: block
     list: true
@@ -183,8 +188,8 @@ components:
     blocks:
       - name: accordion
         component: accordion
-      - name: card
-        component: card
+      - name: cards
+        component: cards
       - name: hero
         component: hero
       - name: text
