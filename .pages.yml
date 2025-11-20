@@ -142,7 +142,7 @@ components:
     label: Cards
     type: object
     fields:
-      - name: Cards
+      - name: cards
         label: Cards
         type: object
         list: true
