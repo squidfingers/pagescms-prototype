@@ -150,7 +150,10 @@ components:
       - name: cards
         label: Cards
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: "Card #{index}"
         fields:
           - name: title
             label: Title
@@ -178,7 +181,10 @@ components:
       - name: details
         label: Details
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: "Detail #{index}"
         fields:
           - name: summary
             label: Summary
@@ -192,7 +198,10 @@ components:
   components:
     label: Page Components
     type: block
-    list: true
+    list:
+      collapsible:
+        collapsed: true
+        summary: "Component #{index}"
     blockKey: type
     blocks:
       - name: accordion
