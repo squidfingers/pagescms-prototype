@@ -5,12 +5,11 @@ params:
     - type: hero
       title: Headline
       subtitle: This is a subtitle.
-      image: /media/image.jpg
     - type: cards
       cards:
         - title: Section One
           image: /media/opossum.jpg
-          content: This is section one.
+          content: This is **section** one.
           buttons:
             - label: Learn more
               link: https://example.com
