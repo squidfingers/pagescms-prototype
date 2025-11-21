@@ -3,20 +3,7 @@ media:
   output: /media
 
 content:
-  # Config
-  - name: config
-    label: Config
-    path: data/config.yaml
-    type: file
-    fields:
-      - name: address
-        label: Address
-        type: string
-        required: true
-      - name: phone
-        label: Phone
-        type: string
-        required: true
+
   # Home
   - name: home
     label: Home
@@ -32,6 +19,7 @@ content:
         fields:
           - name: components
             component: components
+
   # About
   - name: about
     label: About
@@ -50,6 +38,7 @@ content:
         type: string
         list: true
         hidden: true
+
   # News
   - name: news
     label: News
@@ -60,6 +49,7 @@ content:
         label: Title
         type: string
         required: true
+
   # News articles
   - name: articles
     label: News articles
@@ -105,6 +95,46 @@ content:
         #  fetch:
         # In a real-world use-case, this json file would be genereated at the root of the website and would contain all of the tags used the last time the site was built.
         #    url: https://raw.githubusercontent.com/squidfingers/pagescms-prototype/refs/heads/main/static/tags.json
+
+  # Navigation
+  - name: site-navigation
+    label: Site Navigation
+    type: file
+    format: yaml
+    path: config/_default/menu.yaml
+    fields:
+      - name: main
+        label: Main Menu
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: pageRef
+            label: URL
+            type: string
+          - name: weight
+            label: Weight
+            type: number
+
+  # Site Settings
+  - name: site-settings
+    label: Site Settings
+    type: file
+    format: yaml
+    path: config/_default/params.yaml
+    fields:
+      - name: address
+        label: Address
+        type: string
+        required: true
+      - name: phone
+        label: Phone
+        type: string
+        required: true
+
   # Styles
   - name: user_styles
     label: Styles
@@ -113,6 +143,7 @@ content:
     format: code
 
 components:
+
   # Button
   button:
     label: Button
@@ -129,6 +160,7 @@ components:
         type: select
         options:
           values: [primary, secondary]
+
   # Hero
   hero:
     label: Hero
@@ -145,6 +177,7 @@ components:
         type: image
         options:
           multiple: false
+
   # Cards
   cards:
     label: Cards
@@ -176,6 +209,7 @@ components:
                 collapsed: true
                 summary: "Button #{index}"
             component: button
+
   # Accordion
   accordion:
     label: Accordion
@@ -197,6 +231,7 @@ components:
             type: rich-text
             options:
               rows: 3
+
   # Page components
   components:
     label: Page Components
