@@ -4,7 +4,7 @@ params:
   components:
     - type: hero
       title: Headline
-      subtitle: This is a [subtitle](https://example.com).
+      subtitle: This is a subtitle.
       image: /media/image.jpg
     - type: cards
       cards:
