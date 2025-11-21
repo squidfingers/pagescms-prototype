@@ -115,6 +115,7 @@ content:
           - name: pageRef
             label: URL
             type: string
+            required: true
           - name: weight
             label: Weight
             type: number
