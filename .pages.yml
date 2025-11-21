@@ -137,6 +137,9 @@ components:
       - name: title
         label: Title
         type: string
+      - name: subtitle
+        label: Subtitle
+        type: string
       - name: cover
         label: Image
         type: image

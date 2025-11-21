@@ -4,7 +4,8 @@ params:
   components:
     - type: hero
       title: Headline
-      cover: /media/image.jpg
+      subtitle: This is a [subtitle](https://example.com).
+      image: /media/image.jpg
     - type: cards
       cards:
         - title: Section One
@@ -12,9 +13,9 @@ params:
           content: This is section one.
           buttons:
             - label: Learn more
-              link: https://foo.bar
+              link: https://example.com
             - label: Another button
-              link: https://foo.bar
+              link: https://example.com
               variant: secondary
         - title: Section Two
           content: This is section two.
@@ -31,7 +32,10 @@ params:
         - summary: Item four
           content: This is content for item four.
     - type: text
-      content: "### This is a text block."
+      content: |-
+        ### Heading
+
+        This is a text block.
     - type: cards
       cards:
         - title: Another card
