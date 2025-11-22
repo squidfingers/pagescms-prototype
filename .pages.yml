@@ -97,11 +97,11 @@ content:
         #    url: https://raw.githubusercontent.com/squidfingers/pagescms-prototype/refs/heads/main/static/tags.json
 
   # Navigation
-  - name: site-navigation
+  - name: siteNavigation
     label: Site Navigation
     type: file
-    format: yaml
     path: config/_default/menu.yaml
+    format: yaml
     fields:
       - name: main
         label: Main Menu
@@ -124,11 +124,11 @@ content:
             type: number
 
   # Site Settings
-  - name: site-settings
+  - name: siteSettings
     label: Site Settings
     type: file
-    format: yaml
     path: config/_default/params.yaml
+    format: yaml
     fields:
       - name: address
         label: Address
@@ -140,10 +140,10 @@ content:
         required: true
 
   # Styles
-  - name: user_styles
+  - name: userStyles
     label: Styles
-    path: assets/css/styles.css
     type: file
+    path: assets/css/user-styles.css
     format: code
 
 components:

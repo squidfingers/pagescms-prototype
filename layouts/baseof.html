@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>{{ site.Title }}</title>
-    {{ with resources.Get "css/styles.css" | resources.Minify | resources.Fingerprint }}
+    {{ with resources.Get "css/user-styles.css" | resources.Minify | resources.Fingerprint }}
       <link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}">
     {{ end }}
   </head>
