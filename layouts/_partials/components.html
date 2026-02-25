@@ -5,7 +5,7 @@
       {{ $partial := printf "components/%s" $type }}
       {{ with try (partial $partial (dict "page" $ "params" .)) }}
         {{ with .Err }}
-          {{ warnf "%q is not a valid component." $type }}
+          {{ warnf "%s" .Err }}
         {{ else with .Value }}
           {{ . }}
         {{ end }}

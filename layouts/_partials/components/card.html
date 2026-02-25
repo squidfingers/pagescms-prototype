@@ -18,7 +18,7 @@
   {{ with $params.footer }}
     <footer class="flex gap-2 mt-4">
       {{ range . }}
-        {{ partial "components/button" (dict "page" $page "params" .) }}
+        {{ partial "components/button" (dict "page" $page "params" (index .button 0)) }}
       {{ end }}
     </footer>
   {{ end }}
