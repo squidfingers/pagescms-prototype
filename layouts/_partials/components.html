@@ -1,82 +1,15 @@
-{{ range .Params.components }}
-
-  {{ if eq .type "accordion" }}
-
-    <section class="accordion">
-      {{ $name := substr (string math.Rand) 4 8 }}
-      {{ range .details }}
-        <details name="accordion-{{ $name }}">
-          {{ with .summary }}
-            <summary>{{ . }}</summary>
-          {{ end }}
-          {{ with .content }}
-            {{ . | $.Page.RenderString (dict "display" "block") }}
-          {{ end }}
-        </details>
-      {{ end }}
-    </section>
-
-  {{ else if eq .type "cards" }}
-
-    <section class="cards cards--len-{{ .cards | len }}">
-      {{ range .cards }}
-        <article class="card">
-          {{ with .image }}
-            <div class="card__media">
-              {{ $alt := path.BaseName . | humanize }}
-              <img src="{{ . }}" alt="{{ $alt }}">
-            </div>
-          {{ end }}
-          <div class="card__body">
-            {{ with .title }}
-              <h3 class="card__header">
-                {{ . }}
-              </h3>
-            {{ end }}
-            {{ with .content }}
-              <div class="card__content">
-                {{ . | $.Page.RenderString (dict "display" "block") }}
-              </div>
-            {{ end }}
-            {{ with .buttons }}
-              <div class="card__footer">
-                {{ range . }}
-                  {{ $variant := default "primary" .variant }}
-                  <a href="{{ .link }}" class="button button--{{ $variant }}">
-                    {{ .label }}
-                  </a>
-                {{ end }}
-              </div>
-            {{ end }}
-          </div>
-        </article>
-      {{ end }}
-    </section>
-
-  {{ else if eq .type "hero" }}
-
-    <section class="hero" {{ with .image }}style="background-image:url({{ . }})"{{ end }}>
-      {{ with .title }}
-        <h3>
+{{ with .Params.components }}
+  <div class="flex flex-col gap-4">
+    {{ range . }}
+      {{ $type := .type }}
+      {{ $partial := printf "components/%s" $type }}
+      {{ with try (partial $partial (dict "page" $ "params" .)) }}
+        {{ with .Err }}
+          {{ warnf "%q is not a valid component." $type }}
+        {{ else with .Value }}
           {{ . }}
-        </h3>
+        {{ end }}
       {{ end }}
-      {{ with .subtitle }}
-        <p>
-          {{ . }}
-        </p>
-      {{ end }}
-    </section>
-
-  {{ else if eq .type "text" }}
-
-    <section class="text">
-      {{ with .content }}
-        {{ . | $.Page.RenderString (dict "display" "block") }}
-      {{ end }}
-    </section>
-
-  {{ else }}
-    {{ warnf "%q is not a supported component" .type }}
-  {{ end }}
+    {{ end }}
+  </div>
 {{ end }}

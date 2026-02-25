@@ -1,6 +1,12 @@
+# -----------------------------------------------------------------------------
+# Media
+
 media:
   input: static/media
   output: /media
+
+# -----------------------------------------------------------------------------
+# Content
 
 content:
 
@@ -11,50 +17,44 @@ content:
     type: file
     fields:
       - name: title
-        label: Title
-        type: string
+        component: pageTitle
+      - name: description
+        component: pageDescription
       - name: params
-        label: Content
+        label: Page
         type: object
         fields:
-          - name: components
-            component: components
+          - name: pageHeader
+            component: pageHeader
+          - name: componentList
+            component: componentList
 
-  # About
-  - name: about
-    label: About
-    path: content/about/_index.md
+  # Blog
+  - name: blog
+    label: Blog
+    path: content/blog/_index.md
     type: file
     fields:
       - name: title
-        label: Title
-        type: string
-        required: true
-      - name: body
-        label: Content
-        type: rich-text
-      - name: aliases
-        label: Aliases
-        type: string
-        list: true
-        hidden: true
+        component: pageTitle
+      - name: description
+        component: pageDescription
+      - name: cascade
+        label: All Pages
+        type: object
+        fields:
+          - name: params
+            label: Page
+            type: object
+            fields:
+              - name: pageHeader
+                component: pageHeader
 
-  # News
-  - name: news
-    label: News
-    path: content/news/_index.md
-    type: file
-    fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
-
-  # News articles
-  - name: articles
-    label: News articles
+  # Blog Posts
+  - name: blogPosts
+    label: Blog Posts
     type: collection
-    path: content/news
+    path: content/blog
     exclude:
       - _index.md
     filename: "{fields.date}-{primary}.md"
@@ -88,15 +88,8 @@ content:
         label: Tags
         type: string
         list: true
-        #type: select
-        #options:
-        #  creatable: true
-        #  multiple: true
-        #  fetch:
-        # In a real-world use-case, this json file would be genereated at the root of the website and would contain all of the tags used the last time the site was built.
-        #    url: https://raw.githubusercontent.com/squidfingers/pagescms-prototype/refs/heads/main/static/tags.json
 
-  # Navigation
+  # Site Navigation
   - name: siteNavigation
     label: Site Navigation
     type: file
@@ -123,109 +116,60 @@ content:
             label: Weight
             type: number
 
-  # Site Settings
-  - name: siteSettings
-    label: Site Settings
-    type: file
-    path: config/_default/params.yaml
-    format: yaml
-    fields:
-      - name: address
-        label: Address
-        type: string
-        required: true
-      - name: phone
-        label: Phone
-        type: string
-        required: true
-
-  # Styles
-  - name: userStyles
-    label: Styles
-    type: file
-    path: assets/css/user-styles.css
-    format: code
+# -----------------------------------------------------------------------------
+# Components
 
 components:
 
-  # Button
-  button:
-    label: Button
-    type: object
-    fields:
-      - name: label
-        label: Label
-        type: string
-      - name: link
-        label: Link
-        type: string
-      - name: variant
-        label: Variant
-        type: select
-        options:
-          values: [primary, secondary]
+  # Page Title
+  pageTitle:
+    label: Page Title
+    type: string
+    required: true
 
-  # Hero
-  hero:
-    label: Hero
-    type: object
-    fields:
-      - name: title
-        label: Title
-        type: string
-      - name: subtitle
-        label: Subtitle
-        type: string
-      - name: cover
-        label: Image
-        type: image
-        options:
-          multiple: false
+  # Page Description
+  pageDescription:
+    label: Page Description
+    type: text
+    options:
+      rows: 3
 
-  # Cards
-  cards:
-    label: Cards
+  # Page Header
+  pageHeader:
+    label: Page Header
     type: object
     fields:
-      - name: cards
-        label: Cards
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "Card #{index}"
-        fields:
-          - name: title
-            label: Title
-            type: string
-          - name: image
-            label: Image
-            type: image
-            options:
-              multiple: false
-          - name: content
-            label: Content
-            type: rich-text
-          - name: buttons
-            label: Buttons
-            list:
-              collapsible:
-                collapsed: true
-                summary: "Button #{index}"
-            component: button
+      - name: enabled
+        label: Enabled
+        type: boolean
+        default: true
+      - name: condensed
+        label: Condensed
+        type: boolean
+        default: true
+      - name: heading
+        label: Heading
+        type: string
+      - name: subheading
+        label: Subheading
+        type: string
 
   # Accordion
   accordion:
     label: Accordion
     type: object
     fields:
+      - name: exclusive
+        label: Exclusive
+        type: boolean
+        default: true
       - name: details
         label: Details
         type: object
         list:
           collapsible:
             collapsed: true
-            summary: "Detail #{index}"
+            summary: "Details #{index}"
         fields:
           - name: summary
             label: Summary
@@ -233,12 +177,143 @@ components:
           - name: content
             label: Content
             type: rich-text
-            options:
-              rows: 3
+          - name: open
+            label: Open
+            type: boolean
+            default: false
 
-  # Page components
-  components:
-    label: Page Components
+  # Alert
+  alert:
+    label: Alert
+    type: object
+    fields:
+      - name: variant
+        label: Variant
+        type: select
+        required: true
+        options:
+          values: [ default, success, warning, error ]
+      - name: content
+        label: Content
+        type: rich-text
+
+  # Button
+  button:
+    label: Button
+    type: object
+    fields:
+      - name: text
+        label: Text
+        type: string
+      - name: url
+        label: URL
+        type: string
+      - name: style
+        label: Style
+        type: select
+        required: true
+        options:
+          values: [ default, outline, ghost ]
+      - name: variant
+        label: Variant
+        type: select
+        required: true
+        options:
+          values: [ default, primary, secondary, danger ]
+      - name: size
+        label: Size
+        type: select
+        required: true
+        options:
+          values: [ default, small, large ]
+
+  # Card
+  card:
+    label: Card
+    type: object
+    fields:
+      - name: heading
+        label: Heading
+        type: string
+      - name: description
+        label: Description
+        type: string
+      - name: content
+        label: Content
+        type: rich-text
+      - name: footer
+        label: Footer
+        type: object
+        list: true
+        fields:
+          - name: button
+            component: button
+
+  # Cards
+  cards:
+    label: Cards
+    type: object
+    fields:
+      - name: cardlist
+        label: Card List
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "Card #{index}"
+        fields:
+          - name: card
+            component: card
+
+  # Content
+  content:
+    label: Content
+    type: object
+    fields:
+      - name: content
+        label: Content
+        type: rich-text
+
+  # heading
+  heading:
+    label: Heading
+    type: object
+    fields:
+      - name: level
+        label: Level
+        type: number
+        required: true
+        options:
+          min: 1
+          max: 6
+          step: 1
+      - name: text
+        label: Text
+        type: string
+
+  # Tabs
+  tabs:
+    label: Tabs
+    type: object
+    fields:
+      - name: tablist
+        label: Tab List
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "Tab #{index}"
+        fields:
+          - name: tab
+            label: Tab
+            type: string
+          - name: tabpanel
+            label: Tab Panel
+            type: rich-text
+
+  # Component List
+  componentList:
+    label: Component List
     type: block
     list:
       collapsible:
@@ -246,15 +321,15 @@ components:
         summary: "Component #{index}"
     blockKey: type
     blocks:
+      - name: heading
+        component: heading
+      - name: content
+        component: content
       - name: accordion
         component: accordion
+      - name: alert
+        component: alert
       - name: cards
         component: cards
-      - name: hero
-        component: hero
-      - name: text
-        label: Text
-        fields:
-          - name: content
-            label: Content
-            type: rich-text
+      - name: tabs
+        component: tabs

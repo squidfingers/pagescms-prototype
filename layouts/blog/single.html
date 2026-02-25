@@ -1,6 +1,9 @@
 {{ define "main" }}
   {{ partial "main-header" . }}
   {{ with partial "main-content" . }}
-    {{ partial "components" . }}
+    <h2>
+      {{ .Title }}
+    </h2>
+    {{ .Content }}
   {{ end }}
 {{ end }}
