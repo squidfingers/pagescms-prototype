@@ -26,8 +26,8 @@ content:
         fields:
           - name: pageHeader
             component: pageHeader
-          - name: componentList
-            component: componentList
+          - name: components
+            component: components
 
   # Blog
   - name: blog
@@ -311,9 +311,9 @@ components:
             label: Tab Panel
             type: rich-text
 
-  # Component List
-  componentList:
-    label: Component List
+  # Components
+  components:
+    label: Components
     type: block
     list:
       collapsible:
