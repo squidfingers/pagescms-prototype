@@ -281,12 +281,10 @@ components:
     fields:
       - name: level
         label: Level
-        type: number
+        type: select
         required: true
         options:
-          min: 1
-          max: 6
-          step: 1
+          values: [ 2, 3, 4, 5, 6 ]
       - name: text
         label: Text
         type: string
