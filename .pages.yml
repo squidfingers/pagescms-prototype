@@ -244,7 +244,10 @@ components:
       - name: footer
         label: Footer
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: "Button #{index}"
         fields:
           - name: button
             component: button
