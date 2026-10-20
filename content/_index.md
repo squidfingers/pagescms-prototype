@@ -1,7 +1,5 @@
 ---
 
-# TODO: card and buttons are not working in the cards object
-
 title: Home
 params:
   pageHeader:
@@ -43,29 +41,29 @@ params:
     - type: cards
       cardlist:
         - card:
-          - heading: Card 1
+            heading: Card 1
             description: Card description goes here.
             content: |-
               This is the card content. It can contain any HTML.
             footer:
               - button:
-                - text: Learn more
+                  text: Learn more
                   url: /
                   style: default
                   variant: primary
                   size: large
               - button:
-                - text: Learn more
+                  text: Learn more
                   url: /
                   style: ghost
                   variant: secondary
         - card:
-          - heading: Card 2
+            heading: Card 2
             content: |-
               This is the card content. It can contain any HTML.
             footer:
               - button:
-                - text: Learn more
+                  text: Learn more
                   url: /
                   style: outline
                   variant: primary

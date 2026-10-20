@@ -3,6 +3,6 @@
 
 <div class="cards flex gap-4">
   {{ range $params.cardlist }}
-    {{ partial "components/card" (dict "page" $page "params" (index .card 0)) }}
+    {{ partial "components/card" (dict "page" $page "params" .card) }}
   {{ end }}
 </div>
